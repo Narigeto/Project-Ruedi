@@ -1,5 +1,7 @@
 {
   "name": "project-ruedi",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
