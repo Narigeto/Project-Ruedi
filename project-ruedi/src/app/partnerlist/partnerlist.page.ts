@@ -17,3 +17,5 @@ export class PartnerlistPage implements OnInit {
   }
 
 }
+
+
