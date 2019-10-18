@@ -8,6 +8,7 @@
  
 <ion-content>
   <ion-list>
+    <!-- This ng-container is only for displaying some skeleton items if no entries are in the database -->
     <ng-container *ngIf="!todos || todos.length == 0">
       <div *ngFor="let n of [0,1]" padding>
         <ion-skeleton-text></ion-skeleton-text>
@@ -20,15 +21,12 @@
       <ion-item lines="inset" button [routerLink]="['/details', item.id]">
         <ion-label>
           {{ item.task }}
-          <p>Erstellt am: {{ item.createdAt | date:'short' }}</p>
+          <p>Created at: {{ item.createdAt | date:'short' }}</p>
         </ion-label>
         <ion-note slot="end" color="tertiary">{{ item.priority }}</ion-note>
       </ion-item>
       <ion-item-options side="end">
-        <ion-item-option (click)="remove(item)" color="secondary">
-          Check
-          <ion-icon name="checkmark" slot="end"></ion-icon>
-        </ion-item-option>
+        <ion-item-option (click)="remove(item)" color="danger">Delete</ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>
@@ -38,5 +36,4 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
- 
 </ion-content>
