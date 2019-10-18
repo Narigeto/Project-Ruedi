@@ -8,12 +8,16 @@ import { LoveEntryService } from '../../services/love-entry.service';
   styleUrls: ['partnerlist.page.scss']
 })
 export class PartnerlistPage implements OnInit {
+  private todos: Todo[] = [];
 
-  constructor() {
+  constructor(private loveEntryService: LoveEntryService) {
 
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
+    this.loveEntryService.getTodos().subscribe(res => {
+      this.todos = res;
+    });
   }
 
 }

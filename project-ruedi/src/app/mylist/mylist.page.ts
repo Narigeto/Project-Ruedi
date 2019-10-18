@@ -8,11 +8,11 @@ import { LoveEntryService } from '../../services/love-entry.service';
   styleUrls: ['mylist.page.scss']
 })
 export class MylistPage implements OnInit {
-  todos: Todo[];
+  private todos: Todo[] = [];
 
   constructor(private todoService: LoveEntryService) { }
 
-  ngOnInit() {
+  public ngOnInit(): void {
     this.todoService.getTodos().subscribe(res => {
       this.todos = res;
     });

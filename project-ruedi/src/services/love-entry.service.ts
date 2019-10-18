@@ -11,9 +11,12 @@ export class LoveEntryService {
   private todosCollection: AngularFirestoreCollection<Todo>;
   private todos: Observable<Todo[]>;
 
-constructor(db: AngularFirestore) {
-    this.todosCollection = db.collection<Todo>('todos');
-    this.todos = this.todosCollection.snapshotChanges().pipe(
+constructor(private db: AngularFirestore) {
+  }
+
+  public getTodos(): Observable<Todo[]> {
+    this.todosCollection = this.db.collection<Todo>('todos');
+    return this.todosCollection.snapshotChanges().pipe(
       map(actions => {
         return actions.map(a => {
           const data = a.payload.doc.data();
@@ -22,10 +25,6 @@ constructor(db: AngularFirestore) {
         });
       })
     );
-  }
-
-  getTodos() {
-    return this.todos;
   }
 
   getTodo(id) {
