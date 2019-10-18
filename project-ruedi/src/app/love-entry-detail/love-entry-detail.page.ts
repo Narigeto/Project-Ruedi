@@ -1,4 +1,5 @@
-import { Todo, LoveEntryService } from './../services/love-entry.service';
+import { Todo } from '../../models/todo';
+import { LoveEntryService } from '../../services/love-entry.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavController, LoadingController } from '@ionic/angular';
