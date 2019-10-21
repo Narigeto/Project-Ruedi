@@ -8,6 +8,16 @@
 
 <ion-content>
     <ion-list>
+        <!-- This ng-container is only for displaying some skeleton items if no entries are in the database -->
+        <ng-container *ngIf="!todos || todos.length == 0">
+            <div *ngFor="let n of [0,1]" padding>
+                <ion-skeleton-text></ion-skeleton-text>
+                <p>
+                    <ion-skeleton-text class="fake-skeleton"></ion-skeleton-text>
+                </p>
+            </div>
+            ....Your partner did not yet upload a wish... :(
+        </ng-container>
         <ion-item-sliding *ngFor="let item of todos">
             <ion-item>
                 <ion-label>
