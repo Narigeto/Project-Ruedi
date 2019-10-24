@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: 'mylist', loadChildren: './mylist/mylist.module#MyListPageModule' },
   { path: 'love-entry-detail', loadChildren: './love-entry-detail/love-entry-detail.module#LoveEntryDetailPageModule' },
   { path: 'details/:id', loadChildren: './love-entry-detail/love-entry-detail.module#LoveEntryDetailPageModule' },
-  { path: 'details', loadChildren: './love-entry-detail/love-entry-detail.module#LoveEntryDetailPageModule' },  { path: 'settings', loadChildren: './settings/settings.module#SettingsPageModule' }
+  { path: 'details', loadChildren: './love-entry-detail/love-entry-detail.module#LoveEntryDetailPageModule' },  { path: 'settings', loadChildren: './settings/settings.module#SettingsPageModule' },
+  { path: 'welcome-page', loadChildren: './welcome-page/welcome-page.module#WelcomePagePageModule' }
 
 ];
 @NgModule({
